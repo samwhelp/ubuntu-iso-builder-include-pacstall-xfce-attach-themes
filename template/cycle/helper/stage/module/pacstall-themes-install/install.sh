@@ -48,18 +48,6 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 ### Head: Model / mod_module_pacstall_install
 ##
 
-sys_pacstall_install_repository_add () {
-
-	sys_pacstall_install_repository_add_deb_coffee
-
-	sys_pacstall_install_repository_add_deb_coffee_maccity
-
-	sys_pacstall_install_repository_add_deb_coffee_wincity
-
-
-	return 0
-}
-
 sys_pacstall_install_repository_add_deb_coffee () {
 
 
@@ -117,6 +105,101 @@ sys_pacstall_install_repository_add_deb_coffee_wincity () {
 	return 0
 }
 
+sys_pacstall_install_repository_add_deb_coffee_fancy () {
+
+
+	##
+	## ## Link
+	##
+	## * https://github.com/samwhelp/deb-coffee-fancy
+	##
+
+
+	util_error_echo
+	util_error_echo pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-fancy/main"
+	util_error_echo
+	pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-fancy/main"
+
+
+	return 0
+}
+
+sys_pacstall_install_repository_add_deb_coffee_gruvbox () {
+
+
+	##
+	## ## Link
+	##
+	## * https://github.com/samwhelp/deb-coffee-gruvbox
+	##
+
+
+	util_error_echo
+	util_error_echo pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-gruvbox/main"
+	util_error_echo
+	pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-gruvbox/main"
+
+
+	return 0
+}
+
+sys_pacstall_install_repository_add_deb_coffee_grub () {
+
+
+	##
+	## ## Link
+	##
+	## * https://github.com/samwhelp/deb-coffee-grub
+	##
+
+
+	util_error_echo
+	util_error_echo pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-grub/main"
+	util_error_echo
+	pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-grub/main"
+
+
+	return 0
+}
+
+sys_pacstall_install_repository_add_deb_coffee_sddm () {
+
+
+	##
+	## ## Link
+	##
+	## * https://github.com/samwhelp/deb-coffee-sddm
+	##
+
+
+	util_error_echo
+	util_error_echo pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-sddm/main"
+	util_error_echo
+	pacstall -QPA "https://raw.githubusercontent.com/samwhelp/deb-coffee-sddm/main"
+
+
+	return 0
+}
+
+sys_pacstall_install_repository_add () {
+
+	sys_pacstall_install_repository_add_deb_coffee
+
+	sys_pacstall_install_repository_add_deb_coffee_maccity
+
+	sys_pacstall_install_repository_add_deb_coffee_wincity
+
+	sys_pacstall_install_repository_add_deb_coffee_fancy
+
+	sys_pacstall_install_repository_add_deb_coffee_gruvbox
+
+	sys_pacstall_install_repository_add_deb_coffee_grub
+
+	sys_pacstall_install_repository_add_deb_coffee_sddm
+
+	return 0
+}
+
 sys_pacstall_install_packages () {
 
 
@@ -135,6 +218,8 @@ local run_cmd=$(cat << __EOF__
 		bean-appearance-vimix-gtk-theme
 		bean-appearance-vimix-kde-theme
 
+		bean-appearance-greystone-icon-theme
+
 		bean-appearance-orchis-gtk-theme
 		bean-appearance-graphite-gtk-theme
 		bean-appearance-fluent-gtk-theme
@@ -142,6 +227,7 @@ local run_cmd=$(cat << __EOF__
 		bean-appearance-layan-gtk-theme
 		bean-appearance-qogir-gtk-theme
 		bean-appearance-lavanda-gtk-theme
+		bean-appearance-jasper-gtk-theme
 
 __EOF__
 )
